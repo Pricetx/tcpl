@@ -1,0 +1,9 @@
+This repository contains exercise solutions to the book "The C Programming
+Language" ISBN 0131103709. These solutions are merely an interpretation,
+and are not official.
+
+If you feel a solution is deficient and would like to contribute, send a
+diff to freebsd <at> jonathanprice <dot> org.
+
+All source files in this repository are bound by the LICENSE file in the
+root.
