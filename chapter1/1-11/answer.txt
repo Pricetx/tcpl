@@ -1,0 +1,7 @@
+The word count program could be tested by writing a standard test sample
+which could be tested against both the word count program and UNIX wc, or
+the sample word count could be totalled manually.
+
+A sample that would likely uncover bugs in the program is one that makes
+extensive use of a combination of ' ', '\n' and '\t', including chaining
+several of them together in sequence.
