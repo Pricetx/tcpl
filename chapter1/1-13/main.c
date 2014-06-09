@@ -60,7 +60,7 @@ int main() {
 	printf("\n\nVertical histogram:\n\n");
 
 	for (int i = max; i > 0; i--) {
-		printf("%2d | ", i);
+		printf("%3d | ", i);
 
 		/* draw the 1-9 column */
 		for (int j = 1; j < MAXLEN; j++) {
@@ -79,12 +79,12 @@ int main() {
 		printf("\n");
 	}
 
-	printf("   ");
+	printf("    ");
 	for (int i = 0; i < (MAXLEN * 2) + 1; i++)
 		printf("-");
 	printf("\n");
 
-	printf("    ");
+	printf("     ");
 	for (int i = 1; i < MAXLEN; i++)
 		printf("%2d", i);
 	printf(" other\n");
