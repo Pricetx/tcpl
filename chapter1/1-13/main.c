@@ -6,10 +6,10 @@
 
 /* Prints a histogram of the lengths of words in it's input */
 int main() {
-	int c, nother, state, wlength;
+	int c, nother, state, wlength, max;
 	int nlength[MAXLEN];
 
-	nother = wlength = 0;
+	nother = wlength = max = 0;
 	state = OUT;
 	for(int i = 0; i < MAXLEN; i++)
 		nlength[i] = 0;
@@ -32,7 +32,9 @@ int main() {
 		}
 	}
 
-	/* draw the histogram */
+	/* draw the horizontal histogram */
+	printf("Horizontal histogram:\n\n");
+
 	printf("other | ");
 	for (int j = nother; j > 0; j--)
 		printf("#");
@@ -42,6 +44,28 @@ int main() {
 		printf("%5d | ", i);
 		for (int j = nlength[i]; j > 0; j--)
 			printf("#");
+		printf("\n");
+	}
+
+	/* get the highest frequency */
+	for (int i = 0; i < MAXLEN; i++) {
+		if (nlength[i] > max)
+			max = nlength[i];
+	}
+
+	/* draw the vertical histogram */
+	printf("\n\nVertical histogram:\n\n");
+
+	for (int i = max; i > 0; i--) {
+		printf("%2d | ", i);
+
+		for (int j = 1; j < MAXLEN; j++) {
+			if ((nlength[j] - i) >= 0)
+				printf("# ");
+			else
+				printf("  ");
+		}
+
 		printf("\n");
 	}
 }
