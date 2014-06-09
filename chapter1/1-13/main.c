@@ -47,6 +47,9 @@ int main() {
 		printf("\n");
 	}
 
+	if(nother > max)
+		max = nother;
+
 	/* get the highest frequency */
 	for (int i = 0; i < MAXLEN; i++) {
 		if (nlength[i] > max)
@@ -59,6 +62,7 @@ int main() {
 	for (int i = max; i > 0; i--) {
 		printf("%2d | ", i);
 
+		/* draw the 1-9 column */
 		for (int j = 1; j < MAXLEN; j++) {
 			if ((nlength[j] - i) >= 0)
 				printf("# ");
@@ -66,6 +70,22 @@ int main() {
 				printf("  ");
 		}
 
+		/* draw the "other" column */
+		if ((nother - i) >= 0)
+			printf("# ");
+		else
+			printf(" ");
+
 		printf("\n");
 	}
+
+	printf("   ");
+	for (int i = 0; i < (MAXLEN * 2) + 1; i++)
+		printf("-");
+	printf("\n");
+
+	printf("    ");
+	for (int i = 1; i < MAXLEN; i++)
+		printf("%2d", i);
+	printf(" other\n");
 }
