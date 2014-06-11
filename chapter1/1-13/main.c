@@ -5,7 +5,8 @@
 #define MAXLEN	10	/* maximum word length */
 
 /* Prints a histogram of the lengths of words in it's input */
-int main() {
+int main()
+{
 	int c, nother, state, wlength, max;
 	int nlength[MAXLEN];
 
